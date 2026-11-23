@@ -1,0 +1,247 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Until I Found You ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400&display=swap');
+
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{background:#071323;color:#fff;font-family:'Montserrat',sans-serif}
+#film{position:relative;width:100%;height:100%;min-height:560px;overflow:hidden;background:linear-gradient(#071323 0%,#102941 54%,#263c42 100%)}
+.sky{position:absolute;inset:0;background:radial-gradient(ellipse at 75% 22%,#30475c 0%,transparent 34%),linear-gradient(180deg,#071323,#122a40 70%,#263c42)}
+.moon{position:absolute;width:clamp(105px,17vw,190px);height:clamp(105px,17vw,190px);border-radius:50%;right:15%;top:9%;background:radial-gradient(circle at 35% 30%,#fff 0%,#f5f0dc 35%,#d4d9d3 72%,#a9b9bd 100%);box-shadow:0 0 35px #e8f0e6aa,0 0 100px #c5d9df55;animation:moonGlow 5s ease-in-out infinite alternate}
+.moon:after{content:"";position:absolute;inset:10%;border-radius:50%;background:radial-gradient(circle at 25% 55%,#b5c1c0 0 2%,transparent 3%),radial-gradient(circle at 65% 30%,#b5c1c0 0 3%,transparent 4%),radial-gradient(circle at 55% 70%,#c2ccca 0 4%,transparent 5%);opacity:.5}
+@keyframes moonGlow{to{box-shadow:0 0 55px #e8f0e6cc,0 0 130px #c5d9df77}}
+.stars{position:absolute;inset:0}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;box-shadow:0 0 8px #fff;animation:twinkle 2.5s infinite alternate}
+@keyframes twinkle{to{opacity:.18;transform:scale(.5)}}
+.cloud{position:absolute;width:260px;height:65px;background:#8b9ca7;filter:blur(30px);opacity:.12;border-radius:50%;animation:cloudDrift 35s linear infinite}
+.cloud.one{top:24%;left:-280px}.cloud.two{top:43%;left:-320px;animation-delay:-17s;opacity:.08}
+@keyframes cloudDrift{to{transform:translateX(150vw)}}
+.hills{position:absolute;bottom:18%;width:100%;height:36%;background:#142d36;clip-path:polygon(0 60%,12% 35%,24% 53%,37% 20%,52% 52%,67% 24%,81% 48%,92% 27%,100% 43%,100% 100%,0 100%);opacity:.75}
+.hills.back{bottom:20%;height:31%;background:#1c3940;transform:scaleX(-1);opacity:.7}
+.ground{position:absolute;bottom:-8%;width:100%;height:39%;background:radial-gradient(ellipse at 50% 0%,#52605a 0%,#233c3b 35%,#0a1c29 82%);border-radius:50% 50% 0 0}
+.path{position:absolute;bottom:-14%;left:36%;width:36%;height:47%;background:linear-gradient(90deg,#a5a99b22,#d5d1b055,#a5a99b22);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);filter:blur(3px)}
+.lake{position:absolute;bottom:23%;left:8%;width:35%;height:7%;border-radius:50%;background:linear-gradient(180deg,#9baeb0aa,#627d83aa);filter:blur(8px);opacity:.55}
+.tree{position:absolute;bottom:19%;width:0;height:0;border-left:50px solid transparent;border-right:50px solid transparent;border-bottom:190px solid #102b2b;filter:drop-shadow(8px 8px 7px #06131c)}
+.tree:after{content:"";position:absolute;top:135px;left:-8px;width:16px;height:95px;background:#172927}
+.tree.t1{left:3%;transform:scale(.9)}.tree.t2{left:84%;transform:scale(1.2)}.tree.t3{left:74%;transform:scale(.7)}
+.firefly{position:absolute;width:5px;height:5px;border-radius:50%;background:#ffe6a0;box-shadow:0 0 12px 4px #f5d58b88;animation:fly 8s ease-in-out infinite alternate}
+@keyframes fly{0%{transform:translate(0,0);opacity:.2}50%{opacity:1}100%{transform:translate(35px,-65px);opacity:.4}}
+.flowers{position:absolute;bottom:15%;left:0;width:100%;height:15%;background:radial-gradient(ellipse at 10% 60%,#a8b18b 0 2px,transparent 3px),radial-gradient(ellipse at 17% 35%,#e0d8b1 0 3px,transparent 4px),radial-gradient(ellipse at 83% 50%,#e0d8b1 0 3px,transparent 4px),radial-gradient(ellipse at 93% 20%,#a8b18b 0 2px,transparent 3px)}
+#sceneText{position:absolute;z-index:8;top:8%;left:8%;width:45%;max-width:490px;pointer-events:none;animation:textIn 2s both}
+@keyframes textIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.kicker{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:#d8c99f;margin-bottom:18px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(37px,6vw,76px);line-height:.98;margin:0;color:#f6f0df;text-shadow:0 3px 30px #071323}
+#subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.2vw,25px);color:#d5d9d2;margin-top:18px;line-height:1.3;max-width:370px}
+#couple{position:absolute;z-index:5;bottom:13%;left:50%;width:min(590px,80vw);height:min(460px,60vh);transform:translateX(-50%)}
+.person{position:absolute;bottom:0;width:42%;height:100%;transition:transform 2s ease}
+#boy{left:0;transform:translateX(-100%)}
+#girl{right:0;transform:translateX(100%)}
+#boy svg,#girl svg{width:100%;height:100%;overflow:visible}
+.person .shadow{position:absolute;bottom:1%;left:15%;width:70%;height:5%;background:#06121a88;border-radius:50%;filter:blur(8px)}
+#boy.enter{transform:translateX(20%)}
+#girl.enter{transform:translateX(-20%)}
+#boy.close{transform:translateX(39%)}
+#girl.close{transform:translateX(-39%)}
+#boy.dance{animation:boyDance 3s ease-in-out infinite}
+#girl.dance{animation:girlDance 3s ease-in-out infinite}
+@keyframes boyDance{50%{transform:translateX(34%) rotate(-3deg) translateY(-8px)}}
+@keyframes girlDance{50%{transform:translateX(-34%) rotate(3deg) translateY(-10px)}}
+.hand{transform-origin:50% 10%;animation:handWave 3s ease-in-out infinite}
+@keyframes handWave{50%{transform:rotate(-9deg)}}
+.petals{position:absolute;inset:0;pointer-events:none;z-index:7}
+.petal{position:absolute;top:-20px;width:8px;height:13px;background:#e8dfc2;border-radius:90% 0 90% 0;opacity:.55;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(100px,110vh) rotate(500deg)}}
+#vignette{position:absolute;inset:0;z-index:9;pointer-events:none;background:radial-gradient(ellipse,transparent 45%,#02091299 100%)}
+#endMessage{position:absolute;z-index:12;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:#061321b8;backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity 3s}
+#endMessage.show{opacity:1}
+#endMessage h2{font:400 clamp(42px,8vw,85px)/1 'Cormorant Garamond',serif;color:#f4eddb;margin:0 20px}
+#endMessage p{font:italic 21px 'Cormorant Garamond',serif;color:#d7cba9;margin-top:18px}
+#replay{position:absolute;z-index:15;bottom:22px;right:24px;background:#e5ddc5;color:#142638;border:0;border-radius:30px;padding:11px 18px;font:10px 'Montserrat';letter-spacing:2px;cursor:pointer;opacity:.8}
+#replay:hover{opacity:1}
+@media(max-width:600px){
+ #sceneText{top:8%;left:7%;width:80%}
+ .kicker{font-size:8px}
+ #couple{width:95vw;height:43vh;bottom:17%}
+ .tree{transform:scale(.65)}.tree.t2{transform:scale(.8)}
+ .lake{width:50%;left:0}
+}
+</style>
+</head>
+<body>
+<div id="film">
+ <div class="sky"></div>
+ <div class="moon"></div>
+ <div class="cloud one"></div><div class="cloud two"></div>
+ <div class="stars" id="stars"></div>
+ <div class="hills back"></div><div class="hills"></div>
+ <div class="lake"></div><div class="ground"></div><div class="path"></div>
+ <div class="tree t1"></div><div class="tree t2"></div><div class="tree t3"></div>
+ <div class="flowers"></div>
+ <div id="sceneText">
+  <div class="kicker">A story written in the stars</div>
+  <h1 id="heading">Somewhere<br>under the same sky</h1>
+  <div id="subtitle">Two hearts. Two different paths. One beautiful moment waiting to happen.</div>
+ </div>
+ <div class="petals" id="petals"></div>
+ <div id="couple">
+  <div class="person" id="boy">
+   <div class="shadow"></div>
+   <svg viewBox="0 0 240 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+     <linearGradient id="skinM" x2="1" y2="1"><stop stop-color="#bd8060"/><stop offset=".5" stop-color="#996044"/><stop offset="1" stop-color="#71442f"/></linearGradient>
+     <linearGradient id="shirtM" x2="1" y2="1"><stop stop-color="#fff8e8"/><stop offset="1" stop-color="#c8c3b1"/></linearGradient>
+     <linearGradient id="hairM" x2="0" y2="1"><stop stop-color="#453329"/><stop offset="1" stop-color="#171b1c"/></linearGradient>
+    </defs>
+    <!-- legs -->
+    <path d="M84 315 Q83 370 77 418 Q91 430 112 420 L125 322Z" fill="#333d43"/>
+    <path d="M129 318 L143 416 Q155 429 177 419 L160 310Z" fill="#252f36"/>
+    <path d="M76 412 Q91 417 111 412 L121 428 Q95 440 67 432Z" fill="#171d24"/>
+    <path d="M142 411 Q159 415 177 409 L191 427 Q163 440 143 432Z" fill="#171d24"/>
+    <!-- neck -->
+    <path d="M102 119 L105 157 L141 159 L145 115Z" fill="url(#skinM)"/>
+    <!-- torso -->
+    <path d="M99 148 Q120 137 148 149 Q170 158 178 207 L166 325 Q120 343 70 322 L75 209 Q77 167 99 148Z" fill="url(#shirtM)" stroke="#b7b19f" stroke-width="1.5"/>
+    <path d="M107 150 L122 177 L139 150 L149 161 L132 192 L119 192 L98 160Z" fill="#e4ddca"/>
+    <path d="M121 178 L130 194 L123 296 L111 296Z" fill="#b8b5a8" opacity=".6"/>
+    <path d="M77 207 Q62 246 67 290 Q75 302 87 292 L99 220Z" fill="url(#shirtM)"/>
+    <path d="M164 205 Q184 238 177 283 Q170 298 158 285 L151 220Z" fill="url(#shirtM)"/>
+    <!-- hands -->
+    <path d="M67 283 Q61 300 69 310 Q77 315 83 300 L85 287Z" fill="url(#skinM)"/>
+    <path d="M162 282 Q158 300 168 310 Q178 311 180 296 L176 282Z" fill="url(#skinM)"/>
+    <!-- face -->
+    <path d="M91 62 Q91 27 123 27 Q158 28 157 72 L150 119 Q141 143 120 143 Q96 136 91 108Z" fill="url(#skinM)"/>
+    <path d="M94 91 Q83 84 86 99 Q89 112 98 111" fill="#996044"/>
+    <path d="M151 91 Q164 83 162 99 Q159 112 150 111" fill="#88543d"/>
+    <!-- ears -->
+    <ellipse cx="91" cy="99" rx="8" ry="13" fill="#a66c4d"/>
+    <ellipse cx="157" cy="99" rx="8" ry="13" fill="#89553c"/>
+    <!-- hair silhouette -->
+    <path d="M88 91 Q77 47 98 27 Q113 10 139 22 Q163 26 166 58 Q167 78 155 90 L151 65 Q139 58 131 46 Q118 66 95 69Z" fill="url(#hairM)"/>
+    <path d="M91 63 Q95 32 116 27 Q137 17 155 38 Q142 31 132 36 Q113 48 91 63Z" fill="#604535"/>
+    <path d="M95 54 Q109 30 127 28" stroke="#80604a" stroke-width="3" fill="none" opacity=".5"/>
+    <path d="M101 91 Q111 85 119 91" stroke="#34251f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M132 91 Q141 85 149 91" stroke="#34251f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="111" cy="97" rx="4" ry="3" fill="#25292a"/>
+    <ellipse cx="140" cy="97" rx="4" ry="3" fill="#25292a"/>
+    <circle cx="112" cy="96" r="1" fill="#fff"/><circle cx="141" cy="96" r="1" fill="#fff"/>
+    <path d="M124 96 Q119 110 125 112" stroke="#754b38" stroke-width="2" fill="none"/>
+    <path d="M115 122 Q125 129 136 120" stroke="#633d33" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M111 127 Q125 134 139 126" stroke="#bd8060" stroke-width="2" fill="none"/>
+    <path d="M98 110 Q104 116 110 112 M140 112 Q148 116 152 108" stroke="#7b4d3a" fill="none" opacity=".4"/>
+   </svg>
+  </div>
+  <div class="person" id="girl">
+   <div class="shadow"></div>
+   <svg viewBox="0 0 240 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+     <linearGradient id="skinF" x2="1" y2="1"><stop stop-color="#d99a75"/><stop offset=".55" stop-color="#b87555"/><stop offset="1" stop-color="#8d563e"/></linearGradient>
+     <linearGradient id="dressF" x2="1" y2="1"><stop stop-color="#e8e4d5"/><stop offset=".55" stop-color="#b9c2bd"/><stop offset="1" stop-color="#687c7b"/></linearGradient>
+     <linearGradient id="hairF" x2="1" y2="1"><stop stop-color="#47342a"/><stop offset=".5" stop-color="#211d1a"/><stop offset="1" stop-color="#11191b"/></linearGradient>
+    </defs>
+    <!-- flowing hair behind -->
+    <path d="M76 66 Q59 20 110 15 Q171 7 174 67 L185 210 Q174 251 160 270 L150 151 L83 163 L75 260 Q52 229 57 173Z" fill="url(#hairF)"/>
+    <!-- neck -->
+    <path d="M101 121 L101 161 L140 164 L139 120Z" fill="url(#skinF)"/>
+    <!-- dress body -->
+    <path d="M94 148 Q119 137 147 149 Q167 159 174 210 L210 420 Q122 442 30 420 L76 210 Q78 169 94 148Z" fill="url(#dressF)" stroke="#c5c9bd" stroke-width="1.5"/>
+    <path d="M96 150 Q119 174 145 150 L137 198 L108 198Z" fill="#f1eddf"/>
+    <path d="M118 191 Q127 220 120 418" stroke="#f5f1e5" stroke-width="3" opacity=".5" fill="none"/>
+    <path d="M80 202 Q64 236 69 281 Q77 297 89 280 L101 219Z" fill="url(#dressF)"/>
+    <path d="M164 202 Q183 235 173 278 Q165 291 154 278 L148 220Z" fill="url(#dressF)"/>
+    <!-- arms -->
+    <path d="M75 216 Q65 258 73 293 Q78 307 87 297 L95 230Z" fill="url(#skinF)"/>
+    <path d="M167 214 Q182 250 172 291 Q164 307 156 293 L151 230Z" fill="url(#skinF)"/>
+    <!-- face -->
+    <path d="M88 66 Q89 28 120 27 Q155 26 157 68 L151 115 Q144 141 121 144 Q98 138 91 112Z" fill="url(#skinF)"/>
+    <ellipse cx="89" cy="99" rx="7" ry="12" fill="#b87555"/>
+    <ellipse cx="156" cy="99" rx="7" ry="12" fill="#a7674b"/>
+    <!-- hair cap and fringe -->
+    <path d="M83 91 Q69 38 105 20 Q135 4 160 32 Q174 54 160 98 L150 73 Q138 65 132 46 Q117 65 91 71Z" fill="url(#hairF)"/>
+    <path d="M91 60 Q111 24 139 31 Q153 34 163 52 Q145 42 132 49 Q112 61 91 71Z" fill="#604535"/>
+    <path d="M83 72 Q64 122 68 185 Q70 222 54 253 Q81 238 91 190 L96 110Z" fill="url(#hairF)"/>
+    <path d="M151 70 Q177 123 167 192 Q164 229 187 248 Q158 236 150 196 L147 110Z" fill="url(#hairF)"/>
+    <path d="M95 90 Q105 84 115 91" stroke="#593a30" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M132 91 Q142 84 150 91" stroke="#593a30" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M99 98 Q106 91 114 98" stroke="#302522" stroke-width="3" fill="none"/>
+    <path d="M134 98 Q142 91 149 98" stroke="#302522" stroke-width="3" fill="none"/>
+    <ellipse cx="107" cy="100" rx="4" ry="4" fill="#292b28"/>
+    <ellipse cx="142" cy="100" rx="4" ry="4" fill="#292b28"/>
+    <circle cx="108" cy="98" r="1.4" fill="#fff"/><circle cx="143" cy="98" r="1.4" fill="#fff"/>
+    <path d="M123 100 Q118 111 123 113" stroke="#945d49" stroke-width="2" fill="none"/>
+    <path d="M113 124 Q124 133 136 123" stroke="#864b43" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M107 111 Q112 116 117 113 M136 113 Q145 117 151 110" stroke="#e7b18f" stroke-width="3" opacity=".5" fill="none"/>
+    <!-- hair highlights -->
+    <path d="M88 72 Q93 40 117 31 M159 71 Q168 110 160 145" stroke="#795a46" stroke-width="3" opacity=".4" fill="none"/>
+   </svg>
+  </div>
+ </div>
+ <div id="endMessage">
+  <h2>And then, there was you.</h2>
+  <p>In every lifetime, I would find you again.</p>
+ </div>
+ <div id="vignette"></div>
+ <button id="replay" onclick="replay()">REPLAY THE STORY ↗</button>
+</div>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<110;i++){
+ const s=document.createElement('i');s.className='star';
+ s.style.left=Math.random()*100+'%';s.style.top=Math.random()*72+'%';
+ s.style.animationDelay=Math.random()*4+'s';
+ s.style.opacity=.25+Math.random()*.75;
+ stars.appendChild(s);
+}
+const fireflies=Array.from({length:24},(_,i)=>{
+ const f=document.createElement('i');f.className='firefly';
+ f.style.left=(5+Math.random()*90)+'%';
+ f.style.top=(45+Math.random()*43)+'%';
+ f.style.animationDelay=(-Math.random()*8)+'s';
+ f.style.animationDuration=(5+Math.random()*8)+'s';
+ document.getElementById('film').appendChild(f);
+});
+const petals=document.getElementById('petals');
+for(let i=0;i<22;i++){
+ const p=document.createElement('i');p.className='petal';
+ p.style.left=Math.random()*100+'%';
+ p.style.animationDuration=(9+Math.random()*13)+'s';
+ p.style.animationDelay=(-Math.random()*20)+'s';
+ petals.appendChild(p);
+}
+const boy=document.getElementById('boy');
+const girl=document.getElementById('girl');
+const heading=document.getElementById('heading');
+const subtitle=document.getElementById('subtitle');
+const end=document.getElementById('endMessage');
+let timers=[];
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+function text(h,s){
+ heading.innerHTML=h;subtitle.textContent=s;
+ const t=document.getElementById('sceneText');
+ t.style.animation='none';void t.offsetWidth;t.style.animation='textIn 2s both';
+}
+function play(){
+ timers.forEach(clearTimeout);timers=[];
+ boy.className='person';girl.className='person';end.classList.remove('show');
+ text('Somewhere<br>under the same sky','Two hearts. Two different paths. One beautiful moment waiting to happen.');
+ later(()=>text('Before they met...','The stars were already writing a story neither of them knew.'),6500);
+ later(()=>{boy.classList.add('enter');text('A chance encounter','He followed a quiet path beneath the moonlight.' )},12500);
+ later(()=>{girl.classList.add('enter');text('And then, she appeared','Some moments feel like they have been waiting forever.' )},19000);
+ later(()=>text('A familiar feeling','For a moment, the whole world seemed to grow quiet.'),26000);
+ later(()=>{boy.classList.add('close');girl.classList.add('close');text('A little closer','Somehow, the distance between two strangers began to disappear.')},33000);
+ later(()=>text('The beginning of everything','A smile. A glance. A feeling neither could explain.'),41000);
+ later(()=>{boy.classList.add('dance');girl.classList.add('dance');text('Under a thousand stars','And suddenly, they had their own little universe.')},49000);
+ later(()=>{text('If the stars could speak...','They would tell you that some people are worth finding.')},57000);
+ later(()=>{end.classList.add('show')},65000);
+}
+function replay(){play()}
+play();
+</script>
+</body>
+</html>
+ 
